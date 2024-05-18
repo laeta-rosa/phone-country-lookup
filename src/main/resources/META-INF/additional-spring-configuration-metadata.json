@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "parser.url",
+      "type": "java.lang.String",
+      "description": "URL to retrieve list of country calling codes in alphabetical order."
+  }
+]
+}
