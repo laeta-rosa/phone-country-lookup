@@ -1,9 +1,8 @@
-package com.country.codes.service;
+package com.country.codes.service.parser;
 
-import com.country.codes.service.config.ParserConfig;
+import com.country.codes.service.repo.CountryCodeRepository;
 import com.country.codes.service.model.CountryCode;
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -28,7 +27,7 @@ public class CountryCallingCodesParser {
         updateCountryCodes();
     }
 
-    @Scheduled(cron = "0 0 0 * * ?")
+    @Scheduled(cron = "0 */2 * * * *")
     public void updateCountryCodes() {
         try {
             Document doc = Jsoup.connect(parserConfig.getUrl()).get();

@@ -1,23 +1,17 @@
-# Start your image with a node base image
-FROM node:18-alpine
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:21-jdk-slim
 
-# The /app directory should act as the main application directory
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the app package and package-lock.json file
-COPY package*.json ./
+# Copy the local code to the container's working directory
+COPY . .
 
-# Copy local directories to the current local directory of our docker image (/app)
-COPY ./src ./src
-COPY ./public ./public
+# Build the application
+RUN ./mvnw clean package -DskipTests
 
-# Install node packages, install serve, build the app, and remove dependencies at the end
-RUN npm install \
-    && npm install -g serve \
-    && npm run build \
-    && rm -fr node_modules
+# Expose the port the application runs on
+EXPOSE 8088
 
-EXPOSE 3000
-
-# Start the app using serve command
-CMD [ "serve", "-s", "build" ]
+# Run the application
+CMD ["java", "-jar", "target/phone-country-identifier-1.0-SNAPSHOT.jar"]

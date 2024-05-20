@@ -1,4 +1,4 @@
-package com.country.codes.service.config;
+package com.country.codes.service.parser;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
