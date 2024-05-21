@@ -4,7 +4,7 @@ Build-Jdk-Spec: 21
 Implementation-Title: phone-country-identifier
 Implementation-Version: 1.0-SNAPSHOT
 Main-Class: org.springframework.boot.loader.JarLauncher
-Start-Class: com.country.codes.PhoneCountryIdentifierApp
+Start-Class: com.country.codes.PhoneCountryLookupApp
 Spring-Boot-Version: 2.6.15
 Spring-Boot-Classes: BOOT-INF/classes/
 Spring-Boot-Lib: BOOT-INF/lib/

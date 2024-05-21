@@ -2,29 +2,30 @@ package com.country.codes.rest.controller;
 
 import com.country.codes.rest.model.request.PhoneNumberRequest;
 import com.country.codes.rest.model.response.CountryResponse;
-import com.country.codes.service.PhoneCountryService;
-import com.country.codes.service.model.CountryCode;
+import com.country.codes.service.CountryLookupService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 public class PhoneCountryController {
 
-    private final PhoneCountryService service;
+    private final CountryLookupService service;
 
-    @PostMapping("/country")
-    public CountryResponse identifyCountry(@RequestBody PhoneNumberRequest phoneNumber) {
-        return service.identifyCountry(phoneNumber.getPhoneNumber());
+    /**
+     * Looks up the country for a given phone number. The country is determined based on the phone code of the number.
+     *
+     * @param phoneNumber The phone number for which to look up the country.
+     * @return The country response, which includes a list of countries matching the phone code.
+     */
+    @PostMapping("/lookup-country")
+    public CountryResponse lookupCountry(@RequestBody PhoneNumberRequest phoneNumber) {
+        log.info("request phone number: {}", phoneNumber);
+        return service.lookup(phoneNumber.getPhoneNumber());
     }
 
-    @GetMapping("/all")
-    public List<CountryCode> allCountries() {
-        return service.getAllCountries();
-    }
 }

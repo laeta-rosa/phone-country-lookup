@@ -1,7 +1,7 @@
 {
   "properties": [
     {
-      "name": "parser.url",
+      "name": "url.country-calling-codes-table",
       "type": "java.lang.String",
       "description": "URL to retrieve list of country calling codes in alphabetical order."
   }

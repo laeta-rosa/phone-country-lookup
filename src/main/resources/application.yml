@@ -1,6 +1,6 @@
 spring:
   jpa:
-    show-sql: true
+    show-sql: false
 
-parser:
-  url: "https://en.wikipedia.org/wiki/List_of_country_calling_codes#Alphabetical_order"
+url:
+  country-calling-codes-table: "https://en.wikipedia.org/wiki/List_of_country_calling_codes#Alphabetical_order"

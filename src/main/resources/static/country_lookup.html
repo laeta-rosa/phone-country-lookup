@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Country Lookup</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                flex-direction: column;
+            }
+            .output-box {
+                border: 1px solid #ccc;
+                padding: 20px;
+                width: 300px;
+                text-align: center;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                position: absolute;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Country Lookup</h1>
+            <label for="phoneNumber">Phone Number:</label><br>
+            <input type="text" id="phoneNumber" name="phoneNumber"><br>
+            <button id="lookupCountry">Lookup</button>
+        </div>
+
+        <div class="container">
+            <div id="countryOutput" class="output-box"></div>
+        </div>
+
+        <script>
+            $("#lookupCountry").click(function() {
+                var phoneNumber = $("#phoneNumber").val();
+                phoneNumber = phoneNumber.replace(/[.\-+()«»'"\s]/g, ""); // Remove dots, dashes, pluses, parentheses, cyrillic quotes, single and double quotes, and spaces
+                $.ajax({
+                    url: 'http://localhost:8088/lookup-country',
+                    type: 'post',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ phoneNumber: phoneNumber }),
+                    success: function (data) {
+                        console.log("Response data:", data);
+                        $("#countryOutput").empty();
+                        if (data.country && Array.isArray(data.country)) {
+                            data.country.forEach(function(item) {
+                                $("#countryOutput").append($("<p>").text(item));
+                            });
+                        } else {
+                            $("#countryOutput").text("Unexpected response format");
+                        }
+                        $("#countryOutput").css("display", "block");
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("Error:", textStatus, errorThrown);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

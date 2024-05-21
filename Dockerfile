@@ -14,4 +14,4 @@ RUN ./mvnw clean package -DskipTests
 EXPOSE 8088
 
 # Run the application
-CMD ["java", "-jar", "target/phone-country-identifier-1.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/phone-country-lookup-1.0-SNAPSHOT.jar"]

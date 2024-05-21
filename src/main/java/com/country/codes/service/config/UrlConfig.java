@@ -1,4 +1,4 @@
-package com.country.codes.service.parser;
+package com.country.codes.service.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Data
 @Configuration
-@ConfigurationProperties("parser")
-public class ParserConfig {
+@ConfigurationProperties("url")
+public class UrlConfig {
 
-    private String url;
+    private String countryCallingCodesTable;
 
 }
