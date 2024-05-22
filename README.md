@@ -17,10 +17,9 @@ The phone number text field can handle a variety of formats, including:
 ## Pre-Requisites
 
 Before running the service, ensure you have Docker or database client installed on your machine.
+This project uses the Maven Wrapper, so you don't require a local Maven installation. 
 
 ## Building the Application
-
-This project uses the Maven Wrapper, so you don't require a local Maven installation. 
 
 To build an executable JAR file for the application, you can use the Maven Wrapper.
 The steps are as follows:
