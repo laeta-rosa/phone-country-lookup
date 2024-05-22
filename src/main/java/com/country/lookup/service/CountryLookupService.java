@@ -26,7 +26,7 @@ public class CountryLookupService {
 
         final List<Country> countriesByPhonePrefix = findCountriesByPhonePrefixes(prefixes);
 
-        return createCountryResponse(countriesByPhonePrefix);
+        return createCountryResponse(countriesByPhonePrefix, phoneNumber);
     }
 
     private List<String> generatePhonePrefixes(final String phoneNumber) {
@@ -45,9 +45,10 @@ public class CountryLookupService {
      * @param countriesByPhonePrefix The list of Country objects retrieved from the database based on the phone prefixes.
      * @return The CountryResponse object containing a list of country names matching the phone prefixes.
      */
-    private CountryResponse createCountryResponse(final List<Country> countriesByPhonePrefix) {
+    private CountryResponse createCountryResponse(final List<Country> countriesByPhonePrefix, final String phoneNumber) {
         final List<String> countries = countriesByPhonePrefix.stream()
                 .flatMap(country -> country.getPhoneCodes().stream())
+                .filter(code -> phoneNumber.startsWith(code.getCode()))
                 .flatMap(code -> code.getCountries().stream().map(Country::getName))
                 .distinct()
                 .toList();

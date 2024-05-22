@@ -18,6 +18,17 @@ The phone number text field can handle a variety of formats, including:
 
 Before running the service, ensure you have Docker or database client installed on your machine.
 
+## Building the Application
+
+This project uses the Maven Wrapper, so you don't require a local Maven installation. 
+
+To build an executable JAR file for the application, you can use the Maven Wrapper.
+The steps are as follows:
+
+1. Open a terminal
+2. Navigate to the directory containing the `mvnw` file (Maven Wrapper)
+3. Run the command `./mvnw clean install` (on Unix) or `mvnw.cmd clean install` (on Windows).
+
 ## Running the Service
 
 You can run the service by using Docker Compose or the Maven Wrapper included with the project.
@@ -42,11 +53,10 @@ To run the service with the Maven Wrapper, you need to have a database client in
 
 Here are the steps to run the service using the Maven Wrapper:
 
-1. Ensure your database is running. You should consult your database client's manual for instructions.
+1. Ensure the database is running. You should consult your database client's manual for instructions.
 2. Open a terminal
 3. Navigate to the directory containing the `mvnw` file (Maven Wrapper)
-4. Run the command `./mvnw clean install` (on Unix) or `mvnw.cmd clean install` (on Windows). This will build the application and create a target directory with the necessary JAR file.
-5. Once the build is complete, you can run the service by executing `./mvnw spring-boot:run` (on Unix) or `mvnw.cmd spring-boot:run` (on Windows).
+4. Run the service by executing `./mvnw spring-boot:run` (on Unix) or `mvnw.cmd spring-boot:run` (on Windows).
 
 ## Accessing the Service
 
