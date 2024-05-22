@@ -17,7 +17,14 @@ public interface CountryRepository extends JpaRepository<Country, Long> {
      * @param prefixes The list of phone code prefixes to search for countries.
      * @return A list of countries that have phone codes matching the given prefixes.
      */
-    @Query("SELECT c FROM Country c JOIN c.phoneCodes cc WHERE cc.code IN :prefixes AND LENGTH(cc.code) = (SELECT MAX(LENGTH(cc1.code)) FROM Country c1 JOIN c1.phoneCodes cc1 WHERE cc1.code IN :prefixes)")
+    @Query("""
+        SELECT c FROM Country c
+        JOIN c.phoneCodes cc
+        WHERE cc.code IN :prefixes AND LENGTH(cc.code) = (
+            SELECT MAX(LENGTH(cc1.code)) FROM Country c1 
+            JOIN c1.phoneCodes cc1 
+            WHERE cc1.code IN :prefixes)
+        """)
     List<Country> findByPhoneCodes(List<String> prefixes);
 
 }

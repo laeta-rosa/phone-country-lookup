@@ -61,3 +61,10 @@ Here are the steps to run the service using the Maven Wrapper:
 ## Accessing the Service
 
 Once the service starts successfully, you can access the API at `http://localhost:8088/CountryLookup`. 
+
+## Testing and Coverage Report Generation
+This project uses the Jacoco Maven Plugin for running tests and generating test coverage reports. Follow the steps below to run the tests and generate the report:
+1. Open a terminal
+2. Navigate to the directory containing the `mvnw` file (Maven Wrapper)
+3. Run the command `./mvnw clean test` (on Unix) or `mvnw.cmd clean test` (on Windows).
+4. The test coverage report will be generated at the following location: target/site/jacoco/index.html
