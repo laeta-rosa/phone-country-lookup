@@ -1,8 +1,8 @@
-package com.country.codes.service;
+package com.country.lookup.service;
 
-import com.country.codes.rest.model.response.CountryResponse;
-import com.country.codes.service.model.Country;
-import com.country.codes.service.repo.CountryRepository;
+import com.country.lookup.rest.model.response.CountryResponse;
+import com.country.lookup.service.model.Country;
+import com.country.lookup.service.repo.CountryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

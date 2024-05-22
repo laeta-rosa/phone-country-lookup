@@ -1,4 +1,4 @@
-package com.country.codes.rest.model.response;
+package com.country.lookup.rest.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

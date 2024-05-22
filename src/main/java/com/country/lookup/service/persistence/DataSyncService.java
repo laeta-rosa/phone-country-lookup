@@ -1,10 +1,10 @@
-package com.country.codes.service.persistence;
+package com.country.lookup.service.persistence;
 
-import com.country.codes.service.model.Country;
-import com.country.codes.service.model.PhoneCode;
-import com.country.codes.service.parser.PhoneCodesParser;
-import com.country.codes.service.repo.PhoneCodeRepository;
-import com.country.codes.service.repo.CountryRepository;
+import com.country.lookup.service.model.Country;
+import com.country.lookup.service.model.PhoneCode;
+import com.country.lookup.service.parser.PhoneCodesParser;
+import com.country.lookup.service.repo.PhoneCodeRepository;
+import com.country.lookup.service.repo.CountryRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;

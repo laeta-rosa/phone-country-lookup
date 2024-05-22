@@ -1,6 +1,6 @@
-package com.country.codes.service.persistence;
+package com.country.lookup.service.persistence;
 
-import com.country.codes.service.config.UrlConfig;
+import com.country.lookup.service.config.UrlConfig;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

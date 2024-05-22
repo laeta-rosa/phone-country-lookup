@@ -1,6 +1,6 @@
-package com.country.codes.service.repo;
+package com.country.lookup.service.repo;
 
-import com.country.codes.service.model.PhoneCode;
+import com.country.lookup.service.model.PhoneCode;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.country.codes.service.parser;
+package com.country.lookup.service.parser;
 
 import org.springframework.stereotype.Component;
 

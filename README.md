@@ -2,6 +2,18 @@
 
 This service allows looking up the country of a phone number based on its phone code.
 
+## Usage
+
+Enter a phone number into the text field and click "Lookup". The service will return the country or countries associated with the entered phone number.
+
+The phone number text field can handle a variety of formats, including:
+
+- `+7-727-267-28-83`
+- `+39.06.69883135`
+- `+(371)256-856-55`
+
+... and others. The service will process these inputs, standardizing and cleansing the phone number data to look up the correct information.
+
 ## Pre-Requisites
 
 Before running the service, ensure you have Docker or database client installed on your machine.

@@ -1,8 +1,8 @@
-package com.country.codes.rest.controller;
+package com.country.lookup.rest.controller;
 
-import com.country.codes.rest.model.request.PhoneNumberRequest;
-import com.country.codes.rest.model.response.CountryResponse;
-import com.country.codes.service.CountryLookupService;
+import com.country.lookup.rest.model.request.PhoneNumberRequest;
+import com.country.lookup.rest.model.response.CountryResponse;
+import com.country.lookup.service.CountryLookupService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;

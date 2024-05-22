@@ -1,4 +1,4 @@
-package com.country.codes.rest.model.request;
+package com.country.lookup.rest.model.request;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.country.codes.service.model;
+package com.country.lookup.service.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
