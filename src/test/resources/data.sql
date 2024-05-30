@@ -15,3 +15,5 @@ CREATE TABLE country_phone_code (
     FOREIGN KEY (country_id) REFERENCES country(id),
     FOREIGN KEY (phone_code_id) REFERENCES phone_code(id)
 );
+
+CREATE INDEX idx_phone_code ON phone_code(code);

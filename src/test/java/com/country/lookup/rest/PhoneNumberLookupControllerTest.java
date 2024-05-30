@@ -78,7 +78,7 @@ public class PhoneNumberLookupControllerTest {
                 Arguments.of("6620802111", Set.of("Thailand")),
                 Arguments.of("380362649141", Set.of("Ukraine")),
                 Arguments.of("48223288888", Set.of("Poland")),
-                Arguments.of("9714", Set.of("United Arab Emirates"))
+                Arguments.of("97140000000", Set.of("United Arab Emirates"))
         );
     }
 

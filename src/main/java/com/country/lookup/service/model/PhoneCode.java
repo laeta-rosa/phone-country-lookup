@@ -10,6 +10,9 @@ import java.util.Set;
 @Data
 @Entity
 @NoArgsConstructor
+@Table(indexes = {
+        @Index(name = "index_phonecode_code", columnList = "code")
+})
 public class PhoneCode {
 
     @Id

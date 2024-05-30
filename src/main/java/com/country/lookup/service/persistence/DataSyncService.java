@@ -35,7 +35,7 @@ public class DataSyncService {
     private final PhoneCodeRepository phoneCodeRepository;
 
     /**
-     * Synchronizes country calling codes from a URL stored in application.yml.
+     * Synchronizes country calling codes from a URL stored in application properties.
      * Deletes all existing country and phone code records in the database and inserts freshly synced data.
      *
      * @param url the URL to fetch the country calling codes table from

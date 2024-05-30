@@ -20,9 +20,9 @@ public class ScheduledDataSyncService {
     }
 
     /**
-     * Triggers synchronizing country calling codes database values with fresh data from URL stored in application.yml.
+     * Triggers synchronizing country calling codes database values with fresh data from URL stored in application properties.
      */
-    @Scheduled(cron = "0 0 * * * ?")
+    @Scheduled(cron = "0 0 0 * * ?")
     public void scheduledSync() {
         syncService.sync(urlConfig.getCountryCallingCodesTable());
     }
